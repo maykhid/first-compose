@@ -1,0 +1,159 @@
+Kotlin
+
+Here I’ll be adding unique stuff kotlin has that I haven’t seen before or stuff different from what I know
+
+var keyword
+Initializing a variable that can be changed later (mutable)
+
+val keyword
+Initializing a variable that cannot be change later (Immutable) more like using the final keyword in dart'
+
+listOf
+An immutable list or array if you will --> e.g val listOfNum = listOf(1, 2, 3)
+
+mutableListOf
+A mutable list or array if you will -->  e.g val mutableListOfNum = mutableListOf(1, 2, 3)
+
+setOf
+An immutable set --> e.g val mutableSetOfNum = setOf(1, 2, 3)
+
+mutableSetOf
+An mutable set --> e.g val mutableSetOfNum = mutableSetOf(1, 2, 3)
+
+mapOf
+An immutable map -> e.g val aMap = mapOf("Up" to 1, "Down" to 2)
+
+mutableMapOf
+A mutable map -> e.g val aMap = mutableMapOf("Up" to 1, "Down" to 2)
+
+Collection filter
+Every collection has a lambda function that we can use for filtering after filtering a new collection is returned
+e.g val found = collection.filter {
+    // proceed to input the condition
+}
+
+When
+Kotlin includes a when for conditions
+
+Syntax
+_______
+
+
+when (amount) {
+
+	100  -> print(‘’) // when amount is 100 print
+	200 -> print(‘’)
+	else {
+		print(“”)
+	}
+}
+
+in
+This is used to check when a value is in range or collection
+
+when (amount) {
+	in  1..100 -> print(“”) // when amount is between 1 - 100 print
+	!in 10..90	 -> print(“”) // when amount is not  in range of 10 - 90
+	100  -> print(“”)
+	200 -> print(“”)
+}
+
+
+Loop syntax in kotlin
+for(i in 1..100) {
+	println(i)
+}
+
+classes in Kotlin syntax
+
+class Car (// constructor; takes params){
+    // here lies body
+
+    init {
+        // first thing to be run on initn
+    }
+}
+
+Note: All classes are closed by default and cannot be parent to another class
+To remedy, we have to add open key when we create the class;
+The act of 'open'-ing also applies to the methods in the class, even after opening the class the methods or functions
+remain closed
+
+open class Car {
+    // body
+}
+
+open fun somefunctionInAClass(// params) {
+
+}
+
+Inheritance
+
+class Truck(// instantiate all params available in car) : Car(// params)
+
+interface
+Similar to abstract classes in dart used to create contracts and can be used as a parent for another class by extension
+
+// code
+interface SomeInterface {
+    fun someFunction (// params)
+}
+
+function extensions
+Just as similar as the function extension in dart
+
+// code: example of an extension of String
+fun String.append(toAppend: String) : String {
+    return this.plus(toAppend)
+}
+
+Data class
+Just the same way we create data models in dart to hold data, we can create the same thing in kotlin
+it comes along with prebuilt functions that we might normally create ourselves in dart
+
+//code : take note of the data keyword at the beginning, it provides the prebuilt functions we need
+data class Person(val name: String, val age: Int)
+
+Enums
+Kotlin also supports enums
+//code:
+enum class Result {
+    SUCCESS,
+    FAILURE,
+    ERROR
+}
+
+Object class
+This class is an object that creates a singular instance of itself. I reckon it to be more like a class with all it's function and properties are
+declared as static, which means you can use them without creating an object
+
+// code
+
+object TestObject {
+     var loadState: String = "first string"
+
+    fun thisFunction() {
+
+    }
+}
+
+// you can call it like this
+TestObject.thisFunction()
+
+Abstract class
+Abstract class are used to create objects that conform to it's rules or protocol different from abstract class of dart
+
+// code
+abstract class Result
+// body
+data class Success(val dataFetched: String?) : Result()
+
+Sealed class
+Sealed class are abstract classes which when other classes inherit from they have to be in the same class as the sealed class
+
+// code
+sealed class Result
+// body
+data class Success(val dataFetched: String?) : Result()
+
+

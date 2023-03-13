@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "First Compose"
 include ':app'
+include ':myapplication'
+include ':KotlinMod'
